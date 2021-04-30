@@ -1,63 +1,163 @@
-<?php
-include 'assets/includes/header.php';
-?>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Nile - Transportation and Logistics Responsive HTML5 Template</title>
+    <meta name="author" content="Nile-Theme">
+    <meta name="robots" content="index follow">
+    <meta name="googlebot" content="index follow">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="cargo, clean, contractor, corporate, freight, industry, localization, logistics, modern, shipment, transport, transportation, truck, trucking">
+    <meta name="description" content="Transportation and Logistics Responsive HTML5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800%7CPoppins:300i,300,400,500,600,700,400i,500%7CDancing+Script:700%7CDancing+Script:700%7CGreat+Vibes:400%7CPoppins:400%7CDosis:800%7CRaleway:400,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <!-- animate -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <!-- owl Carousel assets -->
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- hover anmation -->
+    <link rel="stylesheet" href="assets/css/hover-min.css">
+    <!-- flag icon -->
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- elegant icon -->
+    <link rel="stylesheet" href="assets/css/elegant_icon.css">
+
+    <!-- jquery library  -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!--  Header  -->
+    <header class="background-white">
+        <div class="header-output">
+            <div class="header-output">
+                <div class="header-in">
+
+                    <!-- Up Head -->
+                    <div class="up-head d-lg-block background-grey-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-8 col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-4 "><i class="fa fa-phone margin-right-10px"></i><a style="color:white" href="tel:010 200 202 03"> 010 200 202 03</a></div>
+                                        <div class="col-md-4  "><i class="fa fa-envelope-o margin-right-10px"></i> dahab@logistic.com</div>
+                                        <div class="col-md-4 "><i class="fa fa-map-marker margin-right-10px"></i> ١٣ شارع بطليموس، الاسكندريه</div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4  d-xl-block">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <!-- lang dropdown -->
+                                            <div class="dropdown show">
+                                                <a class="dropdown-toggle text-white text-uppercase"
+                                                 href="arabic_logistic/contact.php" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="flag-icon flag-icon-mr margin-right-8px"></span> عربى
+                              </a>
+
+                                                <div class="dropdown-menu text-small text-uppercase" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="../contact.php">
+                                                    <span class="flag-icon flag-icon-eg margin-right-8px"></span> English</a>
+                                                </div>
+                                            </div>
+                                            <!-- // lang dropdown -->
+
+                                        </div>
+
+                                        <div class="col-lg-6 d-none">
+                                            <!--  Social -->
+                                            <ul class="social-media list-inline text-right margin-0px text-white">
+                                                <li class="list-inline-item"><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                               
+                                                <li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                                <li class="list-inline-item"><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                                <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                                <li class="list-inline-item"><a class="rss" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                            <!-- // Social -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // Up Head -->
+                    <div class="container">
+                        <div class="position-relative">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12">
+                                    <a id="logo" href="index.php" class="d-inline-block margin-tb-15px">
+                                    <img src="assets/img/new_100_50_trans.png" alt=""></a>
+                                    <a class="mobile-toggle padding-15px background-second-color border-radius-3" href="#"><i class="fa fa-bars"></i></a>
+                                </div>
+                                <div class="col-lg-9 col-md-12 position-inherit">
+                                    <ul id="menu-main" class="nav-menu  text-lg-center link-padding-tb-20px dropdown-dark">
+                                    <li>
+                                            <a data-toggle="modal" data-target=".bd-example-modal-lg" href="#"
+                                            class="btn btn-sm border-radius-30  text-white  background-main-color 
+                                             box-shadow float-right padding-lr-20px d-block" >
+                                            <i class="fa fa-location-arrow "></i> تتبع مسار شحنتك
+                                          </a>
+                                        </li>
+                                           <li class="first-head first-padd"><a href="index.php">الرئيسية</a>
+										</li>
+                                        <li><a href="about.php"> من نحن</a>
+											</li>
+                                            <li><a href="#">خدمات</a>
+											</li>
+                                            <li><a href="#">معرض الصور</a>
+											</li>
+                                            <li><a href="customers.php">عملائنا</a>	
+										</li>
+                                           <li><a href="contact.php"> اتصل بنا</a>	
+										</li>
+                                       
+                                      
+									</ul>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- // Header  -->
+
+   
 
     <div class="page-title">
         <div class="container">
             <div class="padding-tb-120px">
-                <h1>Contact Us</h1>
-                <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Contact Us</li>
-                </ol>
+                <h1>اتصل بنا</h1>
+               
             </div>
         </div>
     </div>
 
 
     <div class="padding-tb-100px">
-
-        <div class="container">
+        <div class="container new-dir" >
             <div class="row">
 
                 <div class="col-lg-6 sm-mb-45px">
-                    <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <h5>Phone :</h5>
-                    <span class="d-block"><i class="fa fa-phone text-main-color margin-right-10px" aria-hidden="true"></i> +222 333 019</span>
-                    <span class="d-block sm-mb-30px"><i class="fa fa-mobile text-main-color margin-right-10px" aria-hidden="true"></i> +222 333 019</span>
-                    <h5 class="margin-top-20px">Address :</h5>
-                    <span class="d-block sm-mb-30px"><i class="fa fa-map text-main-color margin-right-10px" aria-hidden="true"></i> NewYork 1234 Main St </span>
-                    <h5 class="margin-top-20px">Email :</h5>
-                    <span class="d-block sm-mb-30px"><i class="fa fa-envelope-open text-main-color margin-right-10px" aria-hidden="true"></i> info@yoursite.com </span>
+                    <p>يقع مركز الخدمة بالاسكندريه -منطقة سابا باشا وبموقع سهل الوصول من خلال الطرق السريعه وميناء الاسكندريه البحرى</p>
+                    <h5>:رقم الموبايل</h5>
+                    <!-- <span class="d-block"><i class="fa fa-phone text-main-color margin-right-10px" aria-hidden="true"></i>010 200 202 03</span> -->
+                    <span class="d-block sm-mb-30px" dir="rtl"><i class="fa fa-mobile text-main-color margin-right-10px" aria-hidden="true"></i> 010 200 202 03<span>
+                    <h5 class="margin-top-20px" dir="rtl">العنوان:</h5>
+                    <span class="d-block sm-mb-30px" dir="rtl"><i class="fa fa-map text-main-color margin-right-10px" aria-hidden="true"></i> ١٣ شارع بطليموس، الاسكندريه</span>
+                    <h5 class="margin-top-20px" dir="rtl">الايميل:</h5>
+                    <span class="d-block sm-mb-30px" dir="rtl"><i class="fa fa-envelope-open text-main-color margin-right-10px" aria-hidden="true"></i> dahab@logistic.com</span>
                 </div>
-
-                <div class="col-lg-6">
-                    <div class="contact-modal">
-                        <div class="background-main-color">
-                            <div class="padding-30px">
-                                <h3 class="padding-bottom-15px">Get A Free Quote</h3>
-                                <form>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label>Full Name</label>
-                                            <input type="text" class="form-control" id="inputName44" placeholder="Name">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" id="inputEmail44" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Message</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea11" rows="3"></textarea>
-                                    </div>
-                                    <a href="#" class="btn-sm btn-lg btn-block background-dark text-white text-center  text-uppercase rounded-0 padding-15px">SEND MESSAGE</a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
         </div>
@@ -66,33 +166,31 @@ include 'assets/includes/header.php';
 
 
     <div class="map-layout">
-        <div class="map-embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20980.754338669292!2d-118.30289592578626!3d34.08843374094495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z2YTZiNizINij2YbYrNmE2YjYs9iMINmD2KfZhNmK2YHZiNix2YbZitin2Iwg2KfZhNmI2YTYp9mK2KfYqiDYp9mE2YXYqtit2K_YqQ!5e0!3m2!1sar!2ssa!4v1534382441818" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8"></div>
-                <div class="col-lg-4">
-                    <div class="padding-tb-50px padding-lr-30px background-main-color pull-top-309px">
+    
+        <div class="container new-dir" >
+            <div class="row" >
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    <div class="padding-tb-50px padding-lr-30px background-main-color pull-top-309px new-pull">
                         <div class="contact-info-map">
                             <div class="margin-bottom-30px">
-                                <h2 class="title">Location</h2>
+                                <h2 class="title">العنوان</h2>
                                 <div class="contact-info opacity-9">
                                     <div class="icon margin-top-5px"><span class="icon_pin_alt"></span></div>
                                     <div class="text">
-                                        <span class="title-in">Location :</span> <br>
-                                        <span class="font-weight-500 text-uppercase">US - Los Angeles</span>
+                                        <span class="title-in">موقعنا:</span> <br>
+                                        <span class="font-weight-500 text-uppercase"> الاسكندريه ،مصر</span>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="call_center margin-top-30px">
-                                <h2 class="title">Call Center</h2>
+                                <h2 class="title">خدمه العملاء</h2>
                                 <div class="contact-info opacity-9">
                                     <div class="icon  margin-top-5px"><span class="icon_phone"></span></div>
                                     <div class="text">
-                                        <span class="title-in">Call Us :</span><br>
-                                        <span class="font-weight-500 text-uppercase">00222123333019</span>
+                                        <span class="title-in">اتصل بنا:</span><br>
+                                        <span class="font-weight-500 text-uppercase">0105 090 1500</span>
                                     </div>
                                 </div>
                             </div>

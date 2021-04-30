@@ -23,14 +23,14 @@ include 'assets/includes/header.php';
 			<div class="section-title margin-bottom-40px">
 				<div class="row justify-content-center">
 					<div class="col-lg-7">
-						<div class="icon text-main-color">01</div>
+						<div class="icon text-main-color"></div>
 						<div class="h2"> اخر الاخبار</div>
 					</div>
 				</div>
 			</div>
 			<!-- // End Title -->
 
-			<div class="row">
+			<!-- <div class="row">
 
 				<div class="col-lg-4 col-md-6 sm-mb-35px">
 					<div class="blog-item">
@@ -80,19 +80,19 @@ include 'assets/includes/header.php';
 
 
 	<div class="nile-about-section">
-		<div class="container">
+		<div class="container"> -->
 			<!-- Title -->
-			<div class="section-title margin-bottom-40px">
+			<!-- <div class="section-title margin-bottom-40px">
 				<div class="row justify-content-center">
 					<div class="col-lg-7">
 						<div class="icon text-main-color">02</div>
 						<div class="h2">Last News</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- // End Title -->
 
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-lg-6 sm-mb-45px">
 					<div class="background-white thum-hover box-shadow hvr-float full-width wow fadeInUp">
 						<div class="float-md-left margin-right-30px thum-xs">
@@ -125,7 +125,7 @@ include 'assets/includes/header.php';
 						<div class="clearfix"></div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 

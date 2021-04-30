@@ -1885,7 +1885,16 @@ a.action-bottom:hover {
     width: 20%;
     display: inline !important;
   }
+  .margin-left-30px {
+    margin-left: 30px;
+    margin-right:126px;
+}
+.new-pull {
+  margin-top: -143px;
+  margin-bottom: 20px;
+}
 
+  
   .actions .btn {
     width: 36%;
     margin: 1.5em 0;
@@ -2053,7 +2062,7 @@ footer.layout-dark .about-us {
 
 body {
   font-family: "Poppins";
-  font-size: 14px;
+  font-size: 16px;
   line-height: 25px;
   background-color: #FAFAFA;
 }
@@ -17934,8 +17943,8 @@ video {
 
 .margin-left-30px {
   margin-left: 30px;
+ 
 }
-
 .margin-left-31px {
   margin-left: 31px;
 }
@@ -29732,7 +29741,7 @@ video {
 }
 
 .pull-top-309px {
-  margin-top: -309px;
+  margin-top: -360px;
 }
 
 .pull-top-310px {
@@ -33770,7 +33779,16 @@ form.dark-form ::-ms-input-placeholder {
   .YouTubePopUp-Content {
     max-width: 90%;
   }
+  .margin-left-30px {
+    margin-left: 30px;
+    margin-right:126px;
 }
+.new-pull {
+  margin-top: -143px;
+}
+
+}
+
 .rating ul {
   background-color: #FFF;
   padding: 0px;
@@ -33918,7 +33936,15 @@ form.dark-form ::-ms-input-placeholder {
     line-height: inherit;
     letter-spacing: normal;
   }
-
+  .new-margin{
+    margin-left: 30px;
+    margin-right:126px;
+  }
+  .new-pull {
+    margin-top: -143px;
+    margin-bottom: 20px;
+  }
+  
   ul.pagination {
     margin-bottom: 85px;
   }
@@ -38040,6 +38066,14 @@ form.dark-form ::-ms-input-placeholder {
     height: auto;
     margin: 0px !important;
   }
+  .margin-left-30px {
+    margin-left: 30px;
+    margin-right:126px;
+}
+ .new-pull {
+   margin-top: -143px;
+   margin-bottom: 20px;
+}
 
   #search-filter-2 {
     margin-top: 0px;

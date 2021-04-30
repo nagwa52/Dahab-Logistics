@@ -43,34 +43,36 @@
                 <div class="header-in">
 
                     <!-- Up Head -->
-                    <div class="up-head d-none d-lg-block background-grey-4">
+                    <div class="up-head d-lg-block background-grey-4">
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-8 col-lg-12">
                                     <div class="row">
-                                        <div class="col-md-4"><i class="fa fa-phone margin-right-10px"></i> 010 200 202 03</div>
+                                        <div class="col-md-4"><i class="fa fa-phone margin-right-10px"></i>
+                                        <a style="color:white" href="tel:010 200 202 03"> 010 200 202 03</a></div>
                                         <div class="col-md-4"><i class="fa fa-envelope-o margin-right-10px"></i> dahab@logistic.com</div>
                                         <div class="col-md-4"><i class="fa fa-map-marker margin-right-10px"></i> 13 batlaymous Street, Alexandria</div>
                                     </div>
                                 </div>
-                                <div class="col-xl-4 d-none d-xl-block">
+                                <div class="col-xl-4  d-xl-block">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <!-- lang dropdown -->
+                                            
                                             <div class="dropdown show">
-                                                <a class="dropdown-toggle text-white text-uppercase" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="flag-icon flag-icon-us margin-right-8px"></span> English
-                              </a>
+                                                <a class="dropdown-toggle text-white text-uppercase" href="../Logistic/index.php" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                               <span class="flag-icon flag-icon-us margin-right-8px"></span> English
+                                                  </a>
 
-                                                <div class="dropdown-menu text-small text-uppercase" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-mr margin-right-8px"></span> Arabic</a>
-                                                </div>
+                                                   <div class="dropdown-menu text-small text-uppercase" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="arabic_logistic/index.php">
+                                                    <span class="flag-icon flag-icon-mr margin-right-8px"></span> Arabic</a>
+                                                      </div>
                                             </div>
-                                            <!-- // lang dropdown -->
+                                           
 
                                         </div>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 d-none">
                                             <!--  Social -->
                                             <ul class="social-media list-inline text-right margin-0px text-white">
                                                 <li class="list-inline-item"><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -92,7 +94,8 @@
                         <div class="position-relative">
                             <div class="row">
                                 <div class="col-lg-3 col-md-12">
-                                    <a id="logo" href="home-1.html" class="d-inline-block margin-tb-15px"><img src="assets/img/logistic_icon3.jpeg" alt=""></a>
+                                    <a id="logo" href="index.php" class="d-inline-block margin-tb-15px">
+                                    <img src="assets/img/new_100_50_trans.png" alt=""></a>
                                     <a class="mobile-toggle padding-15px background-second-color border-radius-3" href="#"><i class="fa fa-bars"></i></a>
                                 </div>
                                 <div class="col-lg-9 col-md-12 position-inherit">
@@ -101,18 +104,20 @@
 										<li ><a href="index.php">Home</a>
 										
 										</li>
-										<li><a href="#">About Us</a>
+										<li><a href="about.php">About Us</a>
 											</li>
 										<li><a href="#">Services</a>
 											</li>
 										<li><a href="#">Gallery</a>
 											</li>
-										<li><a href="#">Customers</a>	
+										<li><a href="customers.php">Customers</a>	
 										</li>
-										<li><a href="#">Contact Us</a>	
+										<li><a href="contact.php">Contact Us</a>	
 										</li>
 									</ul>
-                                    <a data-toggle="modal" data-target=".bd-example-modal-lg" href="#" class="btn btn-sm border-radius-30 margin-tb-20px text-white  background-main-color  box-shadow float-right padding-lr-20px margin-left-30px d-block">
+                          <a data-toggle="modal" data-target=".bd-example-modal-lg" href="#"
+                          class="btn btn-sm border-radius-30 margin-tb-20px text-white  background-main-color 
+                           box-shadow float-right padding-lr-20px margin-left-30px d-block  ">
                           <i class="fa fa-location-arrow "></i> Track your Shippment
                         </a>
                               
@@ -125,52 +130,5 @@
     </header>
     <!-- // Header  -->
 
-    <!-- Search  -->
-    <div id="search">
-        <button type="button" class="close">×</button>
-        <form class="clearfix d-block">
-            <input type="search" value="" placeholder="Search for . . . ." />
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-    <!-- // Search  -->
+    
 
-    <!-- Get A Quote  -->
-    <!-- <div class="modal contact-modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content margin-top-150px background-main-color">
-                <div class="row no-gutters">
-                    <div class="col-lg-5">
-                        <img src="assets/img/contact-img.jpg" alt="">
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="padding-30px">
-                            <h3 class="padding-bottom-15px">Get A Free Quote</h3>
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label>Full Name</label>
-                                        <input type="text" class="form-control" id="inputName4" placeholder="Name">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                </div>
-                                <div class="form-group">
-                                    <label>Message</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                                <a href="#" class="btn-sm btn-lg btn-block background-dark text-white text-center  text-uppercase rounded-0 padding-15px">SEND MESSAGE</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- // Get A Quote  -->
