@@ -73,14 +73,14 @@
 
                                         <div class="col-lg-6 d-none">
                                             <!--  Social -->
-                                            <ul class="social-media list-inline text-right margin-0px text-white">
+                                            <!-- <ul class="social-media list-inline text-right margin-0px text-white">
                                                 <li class="list-inline-item"><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                                 <li class="list-inline-item"><a class="youtube" href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
                                                 <li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                                 <li class="list-inline-item"><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                                                 <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                                 <li class="list-inline-item"><a class="rss" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                             <!-- // Social -->
                                         </div>
                                     </div>
@@ -151,11 +151,11 @@
                     <p>Our service center is located in Alexandria,Saba Basha area, with smooth access from main fast roads & Alexandria Port.</p>
                     <h5>Phone :</h5>
                     <!-- <span class="d-block"><i class="fa fa-phone text-main-color margin-right-10px" aria-hidden="true"></i>010 200 202 03</span> -->
-                    <span class="d-block sm-mb-30px"><i class="fa fa-mobile text-main-color margin-right-10px" aria-hidden="true"></i> 010 200 202 03<span>
+                    <span class="d-block sm-mb-30px"><i class="fa fa-mobile text-main-color margin-right-10px" aria-hidden="true"></i><a href="tel:010 200 202 03"> 010 200 202 03</a><span>
                     <h5 class="margin-top-20px">Address :</h5>
                     <span class="d-block sm-mb-30px"><i class="fa fa-map text-main-color margin-right-10px" aria-hidden="true"></i>13 batlaymous Street, Alexandria</span>
                     <h5 class="margin-top-20px">Email :</h5>
-                    <span class="d-block sm-mb-30px"><i class="fa fa-envelope-open text-main-color margin-right-10px" aria-hidden="true"></i> dahab@logistic.com</span>
+                    <span class="d-block sm-mb-30px"><i class="fa fa-envelope-open text-main-color margin-right-10px" aria-hidden="true"></i><a href="mailto:dahablogs@gmail.com/">dahablogs@gmail.com</a></span>
                 </div>
 
             </div>
