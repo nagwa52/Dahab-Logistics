@@ -6,8 +6,10 @@
    
     <!-- Title Page-->
     <title>Forms</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Fontfaces CSS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -24,6 +26,8 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    
+   
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
@@ -42,17 +46,17 @@
                     </div>
                     <div class="header__navbar">
                         <ul class="list-unstyled">
-                            <li>
+                        <li>
                                 <a href="index.php">
-                                    <i class="fas fa-trophy"></i>
+                                <i class="fas fa-solid fa-table"></i>
                                     <span class="bot-line"></span>الخزينه</a>
                             </li>
                             <li>
                                 <a href="form.php">
-                                    <i class="fas fa-shopping-basket"></i>
+                                <i class="fas fa-solid fa-user-plus"></i>
                                     <span class="bot-line"></span>ادخال جديد</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#">
                                     <i class="fas fa-trophy"></i>
                                     <span class="bot-line"></span>Features</a>
@@ -68,7 +72,7 @@
                                     <i class="fas fa-desktop"></i>
                                     <span class="bot-line"></span>UI Elements</a>
                                
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <div class="header__tool">

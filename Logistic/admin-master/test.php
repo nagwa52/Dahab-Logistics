@@ -1,39 +1,40 @@
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="js/search.js"></script>
+<script>
+ function fnExcelReport()
+{
+    var tab_text="<table border='2px'><tr bgcolor='#87AFC6'>";
+    var textRange; var j=0;
+    tab = document.getElementById('myTable'); // id of table
 
-<select class="cl_country" id="car_num">
-    <option value="all">رقم السيارة  </option>
-    <option value="DH01">DH01</option>
-                                                <option value="DH02">DH02</option>
-                                                <option value="DH03">DH03</option>
-                                                <option value="DH05">DH04</option>
-                                                <option value="DH05">DH05</option>
-                                                <option value="DH06">DH06</option>
-                                                <option value="DH07">DH07</option>
-                                                <option value="DT01">DT01</option>
-                                                <option value="DT02">DT02</option>
-                                                <option value="DT03">DT03</option>
-                                                <option value="DT04">DT04</option>
-                                                <option value="DT05">DT05</option>
-                                                <option value="DT06">DT06</option>
-                                                <option value="DT07">DT07</option>
-</select>
-<select id="ddlCountry">
-    <option value="all">اختر بند الصرف</option>
-    <option value="قطع_غيار">قطع_غيار</option>
-     <option value="مصنعيات">مصنعيات</option>
-     <option value="سولار">سولار</option>
-     <option value="حوافز نقدية">حوافز نقدية</option>
-</select>
+    for(j = 0 ; j < tab.rows.length ; j++) 
+    {     
+        tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+        //tab_text=tab_text+"</tr>";
+    }
 
-<select id="ddlAge">
-    <option value="all">اختر توجيه الصرف </option>
+    tab_text=tab_text+"</table>";
+    tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+    tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+    tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
 
-</select>
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE "); 
 
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+    {
+        txtArea1.document.open("txt/html","replace");
+        txtArea1.document.write(tab_text);
+        txtArea1.document.close();
+        txtArea1.focus(); 
+        sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+    }  
+    else                 //other browser not tested on IE 11
+        sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
 
+    return (sa);
+}
+</script>
 
-<table class="table table-borderless table-data3" id="table11" border="1">
+<table class="table table-borderless table-data3" id="myTable">
                                     <thead>
                                         <tr>
                                             <th>رقم المسلسل</th>
@@ -44,11 +45,12 @@
                                             <th>المبلغ</th>
                                             <th>البيان</th>
                                             <th>الملاحظات</th>
-                                            <th></th>
+                                            <th>المزيد</th>
                                         </tr>
                                     </thead>
                                    
-                                    
+                                    <button id="btnExport" onclick="fnExcelReport();"> EXPORT </button>
+                                    <iframe id="txtArea1" style="display:none"></iframe>
                                     <?php
                                     $numberid =1;
 $conn = mysqli_connect("localhost", "root", "", "stock");
@@ -68,7 +70,7 @@ echo '<tr><td>' . $numberid++.'</td>
 <td>' . $row['Dcar_num'] .'</td>
 <td>' . $row['Dcat_name'] .'</td>
 <td>' . $row['Ddir_name'] .'</td>
-<td>' . $row['Dsalary'] .'</td>
+<td>' . $row['Dsalary'] . 'ج.م</td>
 <td>' . $row['Ddata'] .  '</td>
 <td>' .$row['Dnotes'] .'</td>
 <td>
@@ -87,4 +89,4 @@ echo "</table>";
 $conn->close();
 ?>
 
-                                </table>
+                                </table>                                     <i class="zmdi zmdi-filter-list"></i>تقرير</button>

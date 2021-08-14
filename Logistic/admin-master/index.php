@@ -10,6 +10,83 @@
 ?>
 
 <?php include ('includes/header.php'); ?>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ddlCountry").change(function () {
+     switch($(this).val()) {
+       case 'قطع_غيار':
+            $("#ddlAge").html("<option value='عام'>عام</option><option value='فلاتر و زيوت'>فلاتر و زيوت</option><option value='سيور'>سيور</option><option value='تيل'>تيل</option><option value='كاوتش'>كاوتش</option>");
+            break;
+        case 'مصنعيات':
+            $("#ddlAge").html("<option value='ميكانيكا'>ميكانيكا</option><option value='كهرباء'>كهرباء</option><option value='حدادة و عفشة'>حدادة و عفشة</option><option value='سمكرة'>سمكرة</option><option value='دوكو'>دوكو</option><option value='سروجى'>سروجى</option><option value='اصلاح كاوتش'>اصلاح كاوتش</option>");
+            break;
+        case 'سولار':
+            $("#ddlAge").html("<option value='سولار'>سولار</option><option value='اضافات'>اضافات</option>");
+            break;
+            case 'حوافز نقدية':
+            $("#ddlAge").html("<option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option>");
+            break;
+        default:
+            $("#ddlAge").html("<option value='all'>اختر توجيه الصرف</option>");
+     
+     }
+    });
+        $("#ddlCountry,#ddlAge,#car_num").on("change", function () {
+
+            var country = $('#ddlCountry').find("option:selected").val();
+            var age =$('#ddlAge').find("option:selected").val();
+            var number =$('#car_num').find("option:selected").val();
+             SearchData(country, age,number)
+        });
+    });
+    function SearchData(country, age, number) {
+        if (country.toUpperCase() == 'ALL' && age.toUpperCase() == 'ALL' && number.toUpperCase() =="ALL") {
+            $('#table11 tbody tr').show();
+        } else {
+            $('#table11 tbody tr:has(td)').each(function () {
+                var rowCountry = $.trim($(this).find('td:eq(3)').text());
+                var rowAge = $.trim($(this).find('td:eq(4)').text());
+                var rowNumber = $.trim($(this).find('td:eq(2)').text());
+            //     console.log("row age is",rowAge);
+            // console.log("this  rowcountry",rowCountry);
+            // console.log("thisrow number",rowNumber);
+                if (country.toUpperCase() != 'ALL' && age.toUpperCase() != 'ALL' && number.toUpperCase() !="ALL" ) {
+                    if (rowCountry.toUpperCase() == country.toUpperCase() && rowAge == age && rowNumber == number) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                } else if ($(this).find('td:eq(3)').text() != '' || $(this).find('td:eq(3)').text() != '') {
+                    if (country != 'all') {
+                        if (rowCountry.toUpperCase() == country.toUpperCase()) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    }
+                    if (age != 'all') {
+                        if (rowAge == age) {
+                            $(this).show();
+                        }
+                        else {
+                            $(this).hide();
+                        }
+                    }
+                    if (number != 'all') {
+                        if (rowNumber == number) {
+                            $(this).show();
+                        }
+                        else {
+                            $(this).hide();
+                        }
+                    }
+                }
+ 
+            });
+        }
+    }
+</script>
+
         <!-- END HEADER MOBILE -->
 
         <!-- PAGE CONTENT-->
@@ -44,64 +121,36 @@
                                 </div>
                                
                                 <div class="table-data__tool-right">
-                                <button class="au-btn-filter">
+                                <button class="au-btn-filter" onclick="fnExcelReport();">
                                         <i class="zmdi zmdi-filter-list"></i>تقرير</button>
+                                        <iframe id="txtArea1" style="display:none"></iframe>
+
                                         <div class="rs-select2--light rs-select2--md">
-                                        <select class="js-select14" name="direction"id="direction"
+                                        <select class="js-select14" name="direction"id="ddlAge"
                                          class="form-control-sm form-control">
-                                                        <option value="0">اختر توجيه الصرف </option>
+                                                        <option value="all">اختر توجيه الصرف </option>
                                                           </select>
                                         <div class="dropDownSelect2"></div>
                                     </div>
                                     <div class="rs-select2--light rs-select2--sm">
                                     <select class="js-select14" name="categories"
-                                    id="categories" class="form-control-sm form-control"
-                                     onchange="countryChange(this);">
-                                                <option value="empty">اختر بند الصرف</option>
-                                                <option value="قطع غيار">قطع غيار</option>
+                                    id="ddlCountry" class="form-control-sm form-control">
+                                                <option value="all">اختر بند الصرف</option>
+                                                <option value="قطع_غيار">قطع_غيار</option>
                                                 <option value="مصنعيات">مصنعيات</option>
                                                 <option value="سولار">سولار</option>
                                                 <option value="حوافز نقدية">حوافز نقدية</option>
                                                </select>
                                       
                                     </div>
-                                    <script>
-                                            var countryLists = new Array(4) 
-                                            countryLists["empty"] = ["Select a Country"]; 
-                                            countryLists["قطع غيار"] = ["عام", "فلاتر وزيوت", "سيور","تيل","كاوتش"]; 
-                                            countryLists["مصنعيات"] = ["ميكانيكا", "كهرباء", "حدادة وعفشه", "اصلاح كاوتش","سمكره","دوكو","سروجى"]; 
-                                            countryLists["سولار"] = ["سولار", "اضافات"]; 
-                                            countryLists["حوافز نقدية"]= ["حافز سائق", "حافز تباع", "عام(نثريات)","اكراميات","كارتات"]; 
-                                            function countryChange(selectObj) { 
-                                            var idx = selectObj.selectedIndex; 
-                                            var which = selectObj.options[idx].value; 
-                                            cList = countryLists[which]; 
-                                            var cSelect = document.getElementById("direction"); 
-                                            var len=cSelect.options.length; 
-                                            while (cSelect.options.length > 0) { 
-                                            cSelect.remove(0); 
-                                            } 
-                                            var newOption; 
-                                           for (var i=0; i<cList.length; i++) { 
-                                            newOption = document.createElement("option"); 
-                                            newOption.value = cList[i];  
-                                            newOption.text=cList[i]; 
-                                            try { 
-                                            cSelect.add(newOption);  
-                                            } 
-                                            catch (e) { 
-                                            cSelect.appendChild(newOption); 
-                                            } 
-                                            } 
-                                            } 
-                                             </script>
+                                
                                     <div class="rs-select2--light rs-select2--sm">
-                                        <select class="js-select14"id="cars" name="cars">
-                                            <option selected="selected">رقم السيارة</option>
+                                        <select class="js-select14"id="car_num" name="cars">
+                                            <option value="all">رقم السيارة</option>
                                                 <option value="DH01">DH01</option>
                                                 <option value="DH02">DH02</option>
                                                 <option value="DH03">DH03</option>
-                                                <option value="DH05">DH04</option>
+                                                <option value="DH03">DH04</option>
                                                 <option value="DH05">DH05</option>
                                                 <option value="DH06">DH06</option>
                                                 <option value="DH07">DH07</option>
@@ -121,7 +170,7 @@
                                         <i class="zmdi zmdi-plus"></i>ادخال جديد </button></a>
                             </div>
                             <div class="table table-borderless table-data3 dir-right">
-                                <table class="table table-borderless table-data3">
+                                <table class="table table-borderless table-data3" id="table11">
                                     <thead>
                                         <tr>
                                             <th>رقم المسلسل</th>
@@ -132,7 +181,7 @@
                                             <th>المبلغ</th>
                                             <th>البيان</th>
                                             <th>الملاحظات</th>
-                                            <th></th>
+                                            <th>المزيد</th>
                                         </tr>
                                     </thead>
                                    
@@ -156,7 +205,7 @@ echo '<tr><td>' . $numberid++.'</td>
 <td>' . $row['Dcar_num'] .'</td>
 <td>' . $row['Dcat_name'] .'</td>
 <td>' . $row['Ddir_name'] .'</td>
-<td>ج.م' . $row['Dsalary'] . '</td>
+<td>' . $row['Dsalary'] . 'ج.م</td>
 <td>' . $row['Ddata'] .  '</td>
 <td>' .$row['Dnotes'] .'</td>
 <td>
@@ -183,49 +232,5 @@ $conn->close();
                 </div>
             </section>
             <!-- END DATA TABLE-->
-
-            <!-- COPYRIGHT-->
-            <section class="p-t-60 p-b-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2021 . All rights reserved by <a href="http://dahab-informatics.com/">Dahab Informatics</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END COPYRIGHT-->
-        </div>
-
-    </div>
-
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
-
-</body>
-
-</html>
-<!-- end document-->
+            <?php include ('includes/footer.php'); ?>
+          
