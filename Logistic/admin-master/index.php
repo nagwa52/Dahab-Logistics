@@ -10,8 +10,6 @@
 ?>
 
 <?php include ('includes/header.php'); ?>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
-
         <!-- END HEADER MOBILE -->
 
         <!-- PAGE CONTENT-->
@@ -46,10 +44,8 @@
                                 </div>
                                
                                 <div class="table-data__tool-right">
-                                <button class="au-btn-filter" onclick="fnExcelReport();">
+                                <button class="au-btn-filter">
                                         <i class="zmdi zmdi-filter-list"></i>تقرير</button>
-                                        <iframe id="txtArea1" style="display:none"></iframe>
-
                                         <div class="rs-select2--light rs-select2--md">
                                         <select class="js-select14" name="direction"id="direction"
                                          class="form-control-sm form-control">
@@ -105,6 +101,7 @@
                                                 <option value="DH01">DH01</option>
                                                 <option value="DH02">DH02</option>
                                                 <option value="DH03">DH03</option>
+                                                <option value="DH05">DH04</option>
                                                 <option value="DH05">DH05</option>
                                                 <option value="DH06">DH06</option>
                                                 <option value="DH07">DH07</option>
@@ -124,7 +121,7 @@
                                         <i class="zmdi zmdi-plus"></i>ادخال جديد </button></a>
                             </div>
                             <div class="table table-borderless table-data3 dir-right">
-                                <table class="table table-borderless table-data3" id="table11">
+                                <table class="table table-borderless table-data3">
                                     <thead>
                                         <tr>
                                             <th>رقم المسلسل</th>
@@ -135,7 +132,7 @@
                                             <th>المبلغ</th>
                                             <th>البيان</th>
                                             <th>الملاحظات</th>
-                                            <th>المزيد</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                    
@@ -159,7 +156,7 @@ echo '<tr><td>' . $numberid++.'</td>
 <td>' . $row['Dcar_num'] .'</td>
 <td>' . $row['Dcat_name'] .'</td>
 <td>' . $row['Ddir_name'] .'</td>
-<td>' . $row['Dsalary'] . 'ج.م</td>
+<td>ج.م' . $row['Dsalary'] . '</td>
 <td>' . $row['Ddata'] .  '</td>
 <td>' .$row['Dnotes'] .'</td>
 <td>
@@ -203,7 +200,7 @@ $conn->close();
         </div>
 
     </div>
-    
+
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
@@ -222,8 +219,9 @@ $conn->close();
     <script src="vendor/circle-progress/circle-progress.min.js"></script>
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="js/downloadFile.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
