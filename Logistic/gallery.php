@@ -88,46 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- // Up Head -->
-                    <div class="container">
-                        <div class="position-relative">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-12">
-                                    <a id="logo" href="index.php" class="d-inline-block margin-tb-15px">
-                                    <img src="assets/img/new_100_50_trans.png" alt=""></a>
-                                    <a class="mobile-toggle padding-15px background-second-color border-radius-3" href="#"><i class="fa fa-bars"></i></a>
-                                </div>
-                                <div class="col-lg-9 col-md-12 position-inherit">
-                                    <ul id="menu-main" class="nav-menu float-xl-left text-lg-center link-padding-tb-25px dropdown-dark">
-                                       	<ul id="menu-main" class="nav-menu float-xl-left text-lg-center link-padding-tb-25px dropdown-dark">
-										<li ><a href="index.php">Home</a>
-										
-										</li>
-										<li><a href="about.php">About Us</a>
-											</li>
-										<li><a href="#">Services</a>
-											</li>
-										<li><a href="gallery.php">Gallery</a>
-											</li>
-										<li><a href="customers.php">Customers</a>	
-										</li>
-										<li><a href="contact.php">Contact Us</a>	
-										</li>
-									</ul>
-                          <a data-toggle="modal" data-target=".bd-example-modal-lg" href="#"
-                          class="btn btn-sm border-radius-30 margin-tb-20px text-white  background-main-color 
-                           box-shadow float-right padding-lr-20px margin-left-30px d-block  ">
-                          <i class="fa fa-location-arrow "></i> Track your Shippment
-                        </a>
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-	
+					<?php include 'assets/includes/header.php';?>
 
 <div class="page-title">
 		<div class="container">
