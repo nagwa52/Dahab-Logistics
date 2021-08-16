@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       // Run the query
       if ($result) 
       { // If it runs
-      header ("location: index.php");
+      header ("location: form.php");
       exit();
       } 
       else 

@@ -38,28 +38,49 @@ $(document).ready(function() {
 
         }
     });
-    $("#ddlCountry,#ddlAge,#car_num").on("change", function() {
+    $("#ddlCountry,#ddlAge,#car_num,#min,#max").on("change", function() {
 
         var country = $('#ddlCountry').find("option:selected").val();
         var age = $('#ddlAge').find("option:selected").val();
         var number = $('#car_num').find("option:selected").val();
-        SearchData(country, age, number)
+        var min = $('#min').val();
+        var max = $('#max').val();
+        SearchData(country, age, number,min,max)
     });
 });
 
-function SearchData(country, age, number) {
-    if (country.toUpperCase() == 'ALL' && age.toUpperCase() == 'ALL' && number.toUpperCase() == "ALL") {
+function SearchData(country, age, number,min,max) {
+                                           // no category no date
+    if (country.toUpperCase() == 'ALL' && age.toUpperCase() == 'ALL' && number.toUpperCase() == "ALL" && min.toUpperCase() == 'YYYY-MM-DD' && max.toUpperCase() == 'YYYY-MM-DD') {
         $('#table11 tbody tr').show();
-    } else {
+    }
+    else if(country.toUpperCase() == 'ALL' && age.toUpperCase() == 'ALL' && number.toUpperCase() == "ALL" && min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD'){
+        $('#table11 tbody tr:has(td)').each(function() {
+            var createdAt = $.trim($(this).find('td:eq(1)').text());
+               if( 
+                ( min == "" || max == "" )
+                || 
+                ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ) 
+            )
+            {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+
+        });
+    }
+    else {
         $('#table11 tbody tr:has(td)').each(function() {
             var rowCountry = $.trim($(this).find('td:eq(3)').text());
             var rowAge = $.trim($(this).find('td:eq(4)').text());
             var rowNumber = $.trim($(this).find('td:eq(2)').text());
-            //     console.log("row age is",rowAge);
-            // console.log("this  rowcountry",rowCountry);
-            // console.log("thisrow number",rowNumber);
-            if (country.toUpperCase() != 'ALL' && age.toUpperCase() != 'ALL' && number.toUpperCase() != "ALL") {
-                if (rowCountry.toUpperCase() == country.toUpperCase() && rowAge == age && rowNumber == number) {
+            var createdAt = $.trim($(this).find('td:eq(1)').text());
+                                   
+         if (country.toUpperCase() != 'ALL' && age.toUpperCase() != 'ALL' && number.toUpperCase() != "ALL" && min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD') {
+                if (rowCountry.toUpperCase() == country.toUpperCase() && rowAge == age && rowNumber == number &&(( min == "" || max == "" )
+                || 
+                ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ))) {
                     $(this).show();
                 } else {
                     $(this).hide();
@@ -86,7 +107,22 @@ function SearchData(country, age, number) {
                         $(this).hide();
                     }
                 }
-            }
+                if(min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD'){
+                   if( 
+                ( min == "" || max == "" )
+                || 
+                ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ) 
+                )
+                 {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+                }
+           
+
+            }   
+            
 
         });
     }
@@ -138,7 +174,7 @@ function SearchData(country, age, number) {
                                 </select>
                                 <div class="dropDownSelect2"></div>
                             </div>
-                            <div class="rs-select2--light rs-select2--sm">
+                            <div class="rs-select2--light rs-select2--md">
                                 <select class="js-select14" name="categories" id="ddlCountry"
                                     class="form-control-sm form-control">
                                     <option value="all">اختر بند الصرف</option>
@@ -170,6 +206,14 @@ function SearchData(country, age, number) {
                                 </select>
 
                             </div>
+                            <div class="rs-select2--light rs-select2--sm">
+                            <div class="col-md-12">
+                            <label class=" font_btn" > من</label>  
+                                  <input type="date" name="from" id="min">
+                                  <label class=" font_btn" > الى</label>
+                                  <input type="date" name="to" id="max" > 
+                             </div>
+                             </div>
 
                         </div>
                         <a href="form.php"><button class="au-btn au-btn-icon au-btn--green au-btn--small">

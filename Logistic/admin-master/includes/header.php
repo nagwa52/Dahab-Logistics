@@ -14,7 +14,9 @@
 
     <!-- Fontfaces CSS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
+    <script src=https://code.jquery.com/jquery-3.5.1.js></script>
+     <script src=https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link href="css/font-face.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">

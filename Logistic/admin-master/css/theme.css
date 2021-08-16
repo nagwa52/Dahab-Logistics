@@ -885,6 +885,9 @@ section {
 .rs-select2--md {
     width: 160px;
 }
+.rs-select2--md .new-width {
+    width: 140px;
+}
 
 .select2-container {
     display: block;
