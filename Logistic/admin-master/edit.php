@@ -1,4 +1,4 @@
-<?php include ('includes/header.php'); ?>
+<?php include ('../assets/includes/header_log.php'); ?>
 <!-- END HEADER MOBILE-->
 
 
@@ -225,4 +225,4 @@ mysqli_close($dbcon);
 
                 </div>
 
-                <?php include ('includes/footer.php'); ?>
+                <?php include ('../assets/includes/footer_log.php'); ?>

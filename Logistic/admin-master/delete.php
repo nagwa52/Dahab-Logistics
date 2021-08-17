@@ -8,7 +8,7 @@ session_start();
 <head>
     <title>Delete </title>
     <meta charset=utf-8>
-    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link href="../assets/css/theme.css" rel="stylesheet" media="all">
 
 </head>
 

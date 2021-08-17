@@ -9,7 +9,7 @@
 
 ?>
 
-<?php include ('includes/header.php'); ?>
+<?php include ('../assets/includes/header_log.php'); ?>
 <script type="text/javascript">
 $(document).ready(function() {
     $("#ddlCountry").change(function() {
@@ -238,12 +238,12 @@ function SearchData(country, age, number,min,max) {
 
                             <?php
                                     $numberid =1;
-$conn = mysqli_connect("localhost", "root", "", "stock");
+                                    $conn = mysqli_connect("localhost", "root", "", "stock");
 
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
+                                    // Check connection
+                                    if ($conn->connect_error) {
+                                    die("Connection failed: " . $conn->connect_error);
+                                    }
 $sql = "SELECT id AS id,date AS Ddate,car_num AS Dcar_num ,cat_name AS Dcat_name,dir_name AS Ddir_name,
 salary AS Dsalary,data AS Ddata,notes AS Dnotes FROM add_payment";
 $result = $conn->query($sql);
@@ -282,4 +282,4 @@ $conn->close();
         </div>
     </section>
     <!-- END DATA TABLE-->
-    <?php include ('includes/footer.php'); ?>
+    <?php include ('../assets/includes/footer_log.php'); ?>
