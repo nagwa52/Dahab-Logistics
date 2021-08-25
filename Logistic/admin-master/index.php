@@ -16,25 +16,32 @@ $(document).ready(function() {
         switch ($(this).val()) {
             case 'قطع_غيار':
                 $("#ddlAge").html(
-                    "<option value='عام'>عام</option><option value='فلاتر و زيوت'>فلاتر و زيوت</option><option value='سيور'>سيور</option><option value='تيل'>تيل</option><option value='كاوتش'>كاوتش</option>"
+                    "<option value='all'>اختر توجيه الصرف</option><option value='عام'>عام</option><option value='فلاتر و زيوت'>فلاتر و زيوت</option><option value='سيور'>سيور</option><option value='تيل'>تيل</option><option value='كاوتش'>كاوتش</option>"
                     );
                 break;
             case 'مصنعيات':
                 $("#ddlAge").html(
-                    "<option value='ميكانيكا'>ميكانيكا</option><option value='كهرباء'>كهرباء</option><option value='حدادة و عفشة'>حدادة و عفشة</option><option value='سمكرة'>سمكرة</option><option value='دوكو'>دوكو</option><option value='سروجى'>سروجى</option><option value='اصلاح كاوتش'>اصلاح كاوتش</option>"
+                    "<option value='all'>اختر توجيه الصرف</option><option value='ميكانيكا'>ميكانيكا</option><option value='كهرباء'>كهرباء</option><option value='حدادة و عفشة'>حدادة و عفشة</option><option value='سمكرة'>سمكرة</option><option value='دوكو'>دوكو</option><option value='سروجى'>سروجى</option><option value='اصلاح كاوتش'>اصلاح كاوتش</option>"
                     );
                 break;
             case 'سولار':
                 $("#ddlAge").html(
-                    "<option value='سولار'>سولار</option><option value='اضافات'>اضافات</option>");
+                    "<option value='all'>اختر توجيه الصرف</option><option value='سولار'>سولار</option><option value='اضافات'>اضافات</option>");
                 break;
             case 'حوافز نقدية':
                 $("#ddlAge").html(
-                    "<option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option>"
+         "<option value='all'>اختر توجيه الصرف</option><option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option><option value='تصريح اسبوعي'>تصريح اسبوعي</option><option value='مصروف'>مصروف</option><option value='مصروف تعتيق'>مصروف تعتيق </option><option value='مصروف مكتب'>مصروف مكتب</option><option value='ايصالات جيش'> ايصالات جيش</option>"
+
+
                     );
                 break;
             default:
                 $("#ddlAge").html("<option value='all'>اختر توجيه الصرف</option>");
+            // case 'اختر بند الصرف':
+            //     $("#ddlAge").html(
+            //         "<option value='all'>اختر توجيه الصرف</option>"
+            //         );
+                break;
 
         }
     });
@@ -77,15 +84,19 @@ function SearchData(country, age, number,min,max) {
             var rowNumber = $.trim($(this).find('td:eq(2)').text());
             var createdAt = $.trim($(this).find('td:eq(1)').text());
                                    
-         if (country.toUpperCase() != 'ALL' && age.toUpperCase() != 'ALL' && number.toUpperCase() != "ALL" && min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD') {
-                if (rowCountry.toUpperCase() == country.toUpperCase() && rowAge == age && rowNumber == number &&(( min == "" || max == "" )
+ if (country.toUpperCase() != 'ALL' && age.toUpperCase() != 'ALL' && number.toUpperCase() != "ALL" && min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD') {
+            if (rowCountry.toUpperCase() == country.toUpperCase() && rowAge == age && rowNumber == number &&
+            (( min == "" || max == "" )
                 || 
-                ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ))) {
+                ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ))) 
+                {
                     $(this).show();
                 } else {
                     $(this).hide();
                 }
-            } else if ($(this).find('td:eq(3)').text() != '' || $(this).find('td:eq(3)').text() != '') {
+            } 
+            else if ($(this).find('td:eq(3)').text() != '' || $(this).find('td:eq(3)').text() != '') {
+                   
                 if (country != 'all') {
                     if (rowCountry.toUpperCase() == country.toUpperCase()) {
                         $(this).show();
@@ -107,24 +118,73 @@ function SearchData(country, age, number,min,max) {
                         $(this).hide();
                     }
                 }
-                if(min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD'){
-                   if( 
-                ( min == "" || max == "" )
-                || 
-                ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ) 
-                )
-                 {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
-                }
-           
-
-            }   
-            
+                // if(min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD'){
+                //    if( 
+                // ( min == "" || max == "" )
+                // || 
+                // ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ) 
+                // )
+                //  {
+                //     $(this).show();
+                // } else {
+                //     $(this).hide();
+                // }
+                // }
+             
+            }
+          
 
         });
+
+        // if (country.toUpperCase() != 'ALL' && age.toUpperCase() != 'ALL' && number.toUpperCase() != "ALL" && min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD') {
+        //         if (rowCountry.toUpperCase() == country.toUpperCase() && rowAge == age && rowNumber == number &&(( min == "" || max == "" )
+        //         || 
+        //         ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ))) {
+        //             $(this).show();
+        //         } else {
+        //             $(this).hide();
+        //         }
+        //     } 
+        //     else if ($(this).find('td:eq(3)').text() != '' || $(this).find('td:eq(3)').text() != '') {
+        //         if (country != 'all') {
+        //             if (rowCountry.toUpperCase() == country.toUpperCase()) {
+        //                 $(this).show();
+        //             } else {
+        //                 $(this).hide();
+        //             }
+        //         }
+        //         if (age != 'all') {
+        //             if (rowAge == age) {
+        //                 $(this).show();
+        //             } else {
+        //                 $(this).hide();
+        //             }
+        //         }
+        //         if (number != 'all') {
+        //             if (rowNumber == number) {
+        //                 $(this).show();
+        //             } else {
+        //                 $(this).hide();
+        //             }
+        //         }
+        //         if(min.toUpperCase() != 'YYYY-MM-DD' && max.toUpperCase() != 'YYYY-MM-DD'){
+        //            if( 
+        //         ( min == "" || max == "" )
+        //         || 
+        //         ( moment(createdAt).isSameOrAfter(min) && moment(createdAt).isSameOrBefore(max) ) 
+        //         )
+        //          {
+        //             $(this).show();
+        //         } else {
+        //             $(this).hide();
+        //         }
+        //         }
+           
+
+        //     }   
+            
+
+        // });
     }
 }
 </script>
@@ -170,7 +230,7 @@ function SearchData(country, age, number,min,max) {
                             <div class="rs-select2--light rs-select2--md">
                                 <select class="js-select14" name="direction" id="ddlAge"
                                     class="form-control-sm form-control">
-                                    <option value="all">اختر توجيه الصرف </option>
+                                    <option value="all">اختر توجيه الصرف</option>
                                 </select>
                                 <div class="dropDownSelect2"></div>
                             </div>
@@ -192,7 +252,7 @@ function SearchData(country, age, number,min,max) {
                                     <option value="DH01">DH01</option>
                                     <option value="DH02">DH02</option>
                                     <option value="DH03">DH03</option>
-                                    <option value="DH03">DH04</option>
+                                    <option value="DH04">DH04</option>
                                     <option value="DH05">DH05</option>
                                     <option value="DH06">DH06</option>
                                     <option value="DH07">DH07</option>
@@ -206,20 +266,34 @@ function SearchData(country, age, number,min,max) {
                                 </select>
 
                             </div>
-                            <div class="rs-select2--light rs-select2--sm">
-                            <div class="col-md-12">
-                            <label class=" font_btn" > من</label>  
-                                  <input type="date" name="from" id="min">
+                            <!--<div class="rs-select2--light rs-select2--sm">-->
+                            <!--<div class="col-md-12">-->
+                            <!--<label class=" font_btn" > من</label>  -->
+                            <!--      <input type="date" name="from" id="min">-->
+                            <!--      <label class=" font_btn" > الى</label>-->
+                            <!--      <input type="date" name="to" id="max" > -->
+                            <!-- </div>-->
+                            <!-- </div>-->
+                            <br><br><br>
+                         <div class="col-md-12">
+                            <!-- <div class="rs-select2--light rs-select2--sm"> -->
+                            
+                            <p class="alert alert-danger" >ملحوظه: يعمل فلتر التاريخ بمفرده او بعد اختيار باقي الفلاتر</p>
+
+                                  <input type="date" name="to" id="max" value=""> 
                                   <label class=" font_btn" > الى</label>
-                                  <input type="date" name="to" id="max" > 
-                             </div>
-                             </div>
+
+                                  <input type="date" name="from" id="min" value="">
+                                  <label class=" font_btn" > من</label>  
+
+                             <!-- </div> -->
+                            </div>
 
                         </div>
                         <a href="form.php"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                 <i class="zmdi zmdi-plus"></i>ادخال جديد </button></a>
                     </div>
-                    <div class="table table-borderless table-data3 dir-right">
+                    <div class="table table-borderless table-data3 dir-right" style="overflow-x: auto;">
                         <table class="table table-borderless table-data3" id="table11">
                             <thead>
                                 <tr>

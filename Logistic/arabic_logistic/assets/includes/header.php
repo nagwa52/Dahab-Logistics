@@ -13,7 +13,7 @@
                                     <li>
                             <a  
                         class="btn btn-sm border-radius-30  text-white  background-main-color 
-                     box-shadow float-right  d-block" href="../../Logistic/admin-master/login.php">
+                     box-shadow float-right  d-block" href="../admin-master/login.php">
                                    <i class="fa fa-database"></i> Reserved area
                                           </a>
                                         </li>

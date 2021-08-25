@@ -2,10 +2,10 @@
 require ('connect-mysql.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
-  
+  $errors = array();
       // Check for date
        if (empty($_POST['date']) ) {
-        $errors[] = 'You forgot to enter the date';
+        $errors[] = 'لقد نسيت كتابة التاريخ';
         }
          else {
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
       // Check for salary
       if (empty($_POST['salary'])) {
-      $errors[] = 'You forgot to enter salary.';
+      $errors[] = 'لقد نسيت كتابة المبلغ';
       } else {
       $salary = mysqli_real_escape_string($dbcon, trim($_POST['salary']));
       }
@@ -27,19 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       
       
       // Check for data
-      if (empty($_POST['data']) ) {
-      $errors[] = 'You forgot to enter your age.';
-      }
-       else {
+    //   if (empty($_POST['data']) ) {
+    //   $errors[] = 'لقد نسيت كتابة البيان';
+    //   }
+    //   else {
       $data = mysqli_real_escape_string($dbcon, trim($_POST['data']));
-      }
+    //   }
       // Check for an notes
       // if (empty($_POST['notes'])) {
       // $errors[] = 'You forgot to enter your notes.';
       // } else {
       $notes = mysqli_real_escape_string($dbcon, trim($_POST['notes']));
       // }
-     
+      if ($_POST['submit'] == 'send') {
       if (empty($errors)) { // If it runs
       // Register the user in the database...
       // Make the query:
@@ -50,12 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         
       $result = @mysqli_query ($dbcon, $q); 
 
-      // Run the query
-      if ($result) 
-      { // If it runs
-      header ("location: form.php");
-      exit();
-      } 
+      if (mysqli_affected_rows($dbcon) == 1) {
+        echo '<h3>لقد تم تسجيل البيان</h3>';
+        echo("<script>location.href ='form.php';</script>");
+       // header( "refresh:1;url=index.php" ); 
+       }
       else 
       { // If it did not run
       // Message:
@@ -66,10 +65,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       echo '<p>' . mysqli_error($dbcon) . '<br><br>Query: ' . $q . '</p>';
       } // End of if ($result)
 
-mysqli_close($dbcon); // Close the database connection.
+// Close the database connection.
 // Include the footer and quit the script:
     }
+    else   { // Display the errors.
+      echo '<p class="error" > لقد حدث خطأ ما<br />';
+      
+      foreach ($errors as $msg) { // Extract the errors from the array and echo them
+      echo " - $msg<br>\n";
+      }
+      echo '</p><p>برجاء مراجعه استكمال البيانات مرة اخرى</p>';
+      header( "refresh:2;url=form.php" );
+      } 
+      mysqli_close($dbcon); 
 exit();
-} 
+} }
 
 ?>

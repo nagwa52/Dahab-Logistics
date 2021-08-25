@@ -35,7 +35,7 @@
                         </a>
                </li>
             <li style="margin-right:-28px!important;margin-left:25px!important">		
-                          <a href="../../Dahab-Logistics/Logistic/admin-master/login.php"
+                          <a href="admin-master/login.php"
                           class="btn btn-sm border-radius-30  text-white  background-main-color 
                               box-shadow float-right padding-btn d-block new-btn-style ">
                           <i class="fa fa-location-arrow "></i> reserved area

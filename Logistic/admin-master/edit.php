@@ -37,8 +37,8 @@
                                                     );
                                                 break;
                                             case 'حوافز نقدية':
-                                                $("#ddlAge").html(
-                                                    "<option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option>"
+                                                $("#ddlAge").html(  "<option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option><option value='تصريح اسبوعي'>تصريح اسبوعي</option><option value=' مصروف'> مصروف</option><option value='مصروف تعتيق'>مصروف تعتيق </option><option value='مصروف مكتب'>مصروف مكتب</option><option value='ايصالات جيش'> ايصالات جيش</option>"
+
                                                     );
                                                 break;
                                             default:
@@ -91,12 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
   
   
   // Check for data
-  if (empty($_POST['data']) ) {
-  $errors[] = 'من فضلك ادخل البيان';
-  }
-   else {
+//   if (empty($_POST['data']) ) {
+//   $errors[] = 'من فضلك ادخل البيان';
+//   }
+//   else {
   $data = mysqli_real_escape_string($dbcon, trim($_POST['data']));
-  }
+//   }
   // Check for an notes
   // if (empty($_POST['notes'])) {
   // $errors[] = 'You forgot to enter your notes.';

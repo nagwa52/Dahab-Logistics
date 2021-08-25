@@ -41,6 +41,7 @@
                                                 <label for="input-normal" class=" form-control-label">اختر رقم
                                                     السياره</label>
                                                 <select id="cars" name="cars" class="form-control-sm form-control">
+                                                <option value="all">اختر رقم السيارة </option>
                                                     <option value="DH01">DH01</option>
                                                     <option value="DH02">DH02</option>
                                                     <option value="DH03">DH03</option>
@@ -80,7 +81,8 @@
                                                     break;
                                                 case 'حوافز نقدية':
                                                     $("#ddlAge").html(
-                                                        "<option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option>"
+                                                                            "<option value='حافز سائق'>حافز سائق</option><option value='حافز تباع'>حافز تباع</option><option value='عام_نثريات'>عام_نثريات</option><option value='اكراميات'>اكراميات</option><option value='كارتات'>كارتات</option><option value='تصريح اسبوعي'>تصريح اسبوعي</option><option value=' مصروف'> مصروف</option><option value='مصروف تعتيق'>مصروف تعتيق </option><option value='مصروف مكتب'>مصروف مكتب</option><option value='ايصالات جيش'> ايصالات جيش</option>"
+
                                                         );
                                                     break;
                                                 default:
@@ -143,13 +145,14 @@
                             </div>
                            
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block"
-                                    name="submit" value="Register">
+                                    name="submit" value="send">
 
                                     <span id="payment-button-amount">ارسال</span>
 
                                 </button>
                            
                             </form>
+                            
                         </div>
                     </div>
                 </div>
